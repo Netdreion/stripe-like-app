@@ -1,5 +1,8 @@
-function Context() {
-  return <></>;
-}
+import React from "react";
+import sublinks from "../data";
 
-export default Context;
+const AppContext = React.createContext();
+
+const AppProvider = ({ children }) => {
+  return <AppContext.Provider>{children}</AppContext.Provider>;
+};
