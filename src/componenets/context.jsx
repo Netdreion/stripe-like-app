@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import sublinks from "../data";
 
 const AppContext = React.createContext();
 
-const AppProvider = ({ children }) => {
-  const [isSidebarOpen, setIsSideBarOpen] = useState(true);
+export const AppProvider = (children) => {
+  const [isSideBarOpen, setIsSideBarOpen] = useState(true);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(true);
 
   const openSideBar = () => {
     setIsSideBarOpen(true);
   };
-  function closeSideBar() {
+  const closeSideBar = () => {
     setIsSideBarOpen(false);
-  }
+  };
   const openSubMenu = () => {
     setIsSubMenuOpen(true);
   };
@@ -23,8 +23,8 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        isSideBarOpen,
         isSubMenuOpen,
-        isSidebarOpen,
         openSideBar,
         closeSideBar,
         openSubMenu,
@@ -34,4 +34,7 @@ const AppProvider = ({ children }) => {
       {children}
     </AppContext.Provider>
   );
+};
+export const useGlabalContext = () => {
+  return useContext(AppContext);
 };
