@@ -5,7 +5,17 @@ import { useGlobalContext } from "./context";
 const Hero = () => {
   const data = useGlobalContext();
   console.log(data);
-  return <h2>hero</h2>;
+
+  return (
+    <section className="hero">
+      <div className="hero-center">
+        <article></article>
+        <article className="hero-images">
+          <img src={phoneImg} className="phone-img" alt="phone" />
+        </article>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;
