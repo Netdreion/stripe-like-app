@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./index.css";
 import Navbar from "./componenets/Navbar";
 import Hero from "./componenets/Hero";
 import SideBar from "./componenets/SideBar";

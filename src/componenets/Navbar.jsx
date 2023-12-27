@@ -6,6 +6,10 @@ import logo from "./images/logo.svg";
 const Navbar = () => {
   const { openSideBar, openSubMenu, closeSubMenu } = useGlobalContext();
 
+  const displaySubMenu = (e) => {
+    console.log(e.target);
+    openSubMenu();
+  };
   return (
     <nav className="nav">
       <div className="nav-center">
